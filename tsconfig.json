@@ -1,6 +1,15 @@
 {
     "compilerOptions": { 
+        "target": "es5",
+        "module": "es6",
+        "declaration": true,
+        "outDir": "dist",
         "moduleResolution": "node",
-        "module": "commonjs"
-    }
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "exclude": [
+        "**/test.ts"
+    ]
 }

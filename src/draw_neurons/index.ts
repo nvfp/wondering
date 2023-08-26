@@ -1,19 +1,6 @@
-// import { randFloat, randInt, randChoice } from "../random";
-// import { drawGradLine, drawBloomCircle } from "../canvas";
-// import { interpolateColor, hexToRgb } from "../color";
-
-const randomModule = require("../random");
-const randInt = randomModule.randInt;
-const randFloat = randomModule.randFloat;
-const randChoice = randomModule.randChoice;
-
-const canvasModule = require("../canvas");
-const drawGradLine = canvasModule.drawGradLine;
-const drawBloomCircle = canvasModule.drawBloomCircle;
-
-const colorsModule = require("../color");
-const interpolateColor = colorsModule.interpolateColor;
-const hexToRgb = colorsModule.hexToRgb;
+import { randFloat, randInt, randChoice } from "../random";
+import { drawGradLine, drawBloomCircle } from "../canvas";
+import { interpolateColor, hexToRgb } from "../color";
 
 
 export function drawNeurons(

@@ -1,7 +1,4 @@
-// import { hexToRgb } from "../color";
-
-const colorModule = require("../color");
-const hexToRgb = colorModule.hexToRgb;
+import { hexToRgb } from "../color";
 
 
 /**

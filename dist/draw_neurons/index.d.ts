@@ -1,0 +1,1 @@
+export declare function drawNeurons(canvas: HTMLCanvasElement, xgap?: number, ygap?: number, xgap_off?: number, ygap_off?: number, neuron_prob?: number, string_prob?: number, background?: string, color1?: string, color2?: string): void;

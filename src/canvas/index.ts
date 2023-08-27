@@ -1,4 +1,4 @@
-import { hexToRgb } from "wondering/dist/color";
+import { hexToRgb } from "../color.js";
 
 
 /**

@@ -1,7 +1,7 @@
 {
     "name": "wondering",
     "description": "Various common functions toolbox",
-    "version": "0.1.11",
+    "version": "0.1.15",
     "files": [
         "/dist"
     ]

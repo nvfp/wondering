@@ -1,6 +1,6 @@
-import { randFloat, randInt, randChoice } from "wondering/dist/random";
-import { drawGradLine, drawBloomCircle } from "wondering/dist/canvas";
-import { interpolateColor, hexToRgb } from "wondering/dist/color";
+import { randFloat, randInt, randChoice } from "../random.js";
+import { drawGradLine, drawBloomCircle } from "../canvas.js";
+import { interpolateColor, hexToRgb } from "../color.js";
 
 
 export function drawNeurons(

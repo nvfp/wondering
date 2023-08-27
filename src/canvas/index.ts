@@ -1,4 +1,4 @@
-import { hexToRgb } from "../color.js";
+import { hexToRgb } from "../color/index.js";
 
 
 /**

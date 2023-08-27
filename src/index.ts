@@ -1,1 +1,0 @@
-export const testabc = 123;

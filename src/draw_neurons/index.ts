@@ -1,6 +1,6 @@
-import { randFloat, randInt, randChoice } from "../random.js";
-import { drawGradLine, drawBloomCircle } from "../canvas.js";
-import { interpolateColor, hexToRgb } from "../color.js";
+import { randFloat, randInt, randChoice } from "../random/index.js";
+import { drawGradLine, drawBloomCircle } from "../canvas/index.js";
+import { interpolateColor, hexToRgb } from "../color/index.js";
 
 
 export function drawNeurons(

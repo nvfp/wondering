@@ -1,8 +1,11 @@
 {
     "name": "wondering",
     "description": "Various common functions toolbox",
-    "version": "0.1.16",
+    "version": "0.1.17",
     "files": [
         "/dist"
-    ]
+    ],
+    "scripts": {
+        "x": "rmdir /s /q dist && tsc"
+    }
 }

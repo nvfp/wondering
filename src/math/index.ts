@@ -4,7 +4,7 @@
 /**
  * RunningAverages class calculates the average without storing each individual value.
  */
-class RunningAverages {
+export class RunningAverages {
     private count: number;
     private average: number;
     private min: number;
@@ -69,7 +69,7 @@ class RunningAverages {
  * @param {number[][]} m2 - The second matrix.
  * @returns {number[][]} The result of the dot product as a new matrix.
  */
-function dotProduct(m1: number[][], m2: number[][]): number[][] {
+export function dotProduct(m1: number[][], m2: number[][]): number[][] {
     const rows1 = m1.length;
     const cols1 = m1[0].length;
     const cols2 = m2[0].length;
@@ -97,7 +97,7 @@ function dotProduct(m1: number[][], m2: number[][]): number[][] {
  * @param {number} x - The input value.
  * @returns {number} - The result of the sigmoid function.
  */
-function sigmoid(x: number): number {
+export function sigmoid(x: number): number {
     return 1 / (1 + Math.exp(-x));
 }
 
@@ -112,7 +112,7 @@ function sigmoid(x: number): number {
  * @param {number} toMax - The maximum value of the target range.
  * @returns {number} The mapped value.
  */
-function mapRange(value: number, fromMin: number, fromMax: number, toMin: number, toMax: number): number {
+export function mapRange(value: number, fromMin: number, fromMax: number, toMin: number, toMax: number): number {
     // Normalize the value from the original range
     const normalizedValue = (value - fromMin) / (fromMax - fromMin);
 

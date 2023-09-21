@@ -82,7 +82,7 @@ export function trilinearInterpolation(color1: string, color2: string, color3: s
  * @param {number} l - Lightness value in the interval [0, 100].
  * @returns {number[]} An array containing the RGB values in the range [0, 255].
  */
-function hslToRgb(h: number, s: number, l: number): number[] {
+export function hslToRgb(h: number, s: number, l: number): number[] {
     // Convert input values to fractions
     const h_frac = (Math.abs(h) % 360) / 359;
     const s_frac = Math.min(100, Math.max(0, s)) / 100;
@@ -132,7 +132,7 @@ function hslToRgb(h: number, s: number, l: number): number[] {
 //  * @param l - The lightness value (0 to 100).
 //  * @returns A random color in hexadecimal format (e.g., "#RRGGBB").
 //  */
-// function randHue(s: number, l: number): string {
+// export function randHue(s: number, l: number): string {
 //     // Generate a random hue value (0 to 359 degrees)
 //     let h = randInt(0, 359);
 

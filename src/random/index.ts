@@ -37,7 +37,7 @@ export function randChoice<T>(array: T[]): T {
  * 
  * @returns A random number from a standard normal distribution.
  */
-function randNormal(): number {
+export function randNormal(): number {
     let u = 0, v = 0;
     while (u === 0) u = Math.random(); // Generate a random number (0,1]
     while (v === 0) v = Math.random(); // Generate a random number (0,1]
@@ -55,7 +55,7 @@ function randNormal(): number {
  * @param skew - The skewness factor of the distribution (default: 1).
  * @returns A random number within the specified range following a skewed normal distribution.
  */
-function randn(min: number = -3.6, max: number = 3.6, skew: number = 1): number {
+export function randn(min: number = -3.6, max: number = 3.6, skew: number = 1): number {
     // Normal Distribution.
 
     let u: number = 0, v: number = 0;

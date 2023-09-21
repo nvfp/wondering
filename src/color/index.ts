@@ -72,3 +72,73 @@ export function trilinearInterpolation(color1: string, color2: string, color3: s
 
     return rgbToHex(r, g, b);
 }
+
+
+/**
+ * Converts HSL (Hue, Saturation, Lightness) values to RGB (Red, Green, Blue) color.
+ *
+ * @param {number} h - Hue value in the interval [0, 359].
+ * @param {number} s - Saturation value in the interval [0, 100].
+ * @param {number} l - Lightness value in the interval [0, 100].
+ * @returns {number[]} An array containing the RGB values in the range [0, 255].
+ */
+function hslToRgb(h: number, s: number, l: number): number[] {
+    // Convert input values to fractions
+    const h_frac = (Math.abs(h) % 360) / 359;
+    const s_frac = Math.min(100, Math.max(0, s)) / 100;
+    const l_frac = Math.min(100, Math.max(0, l)) / 100;
+
+    // Helper function to convert hue to RGB
+    function hueToRgb(p: number, q: number, t: number): number {
+        t += (t < 0) ? 1 : 0;
+        t -= (t > 1) ? 1 : 0;
+        if (t < 1 / 6) return p + (q - p) * 6 * t;
+        if (t < 1 / 2) return q;
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+        return p;
+    }
+
+    let r_frac, g_frac, b_frac;
+
+    if (s_frac === 0) {
+        // Achromatic (grayscale)
+        r_frac = l_frac;
+        g_frac = l_frac;
+        b_frac = l_frac;
+    } else {
+        // Chromatic (color)
+        const q = (l_frac < 0.5) ? l_frac * (1 + s_frac) : l_frac + s_frac - l_frac * s_frac;
+        const p = 2 * l_frac - q;
+
+        r_frac = hueToRgb(p, q, h_frac + 1 / 3);
+        g_frac = hueToRgb(p, q, h_frac);
+        b_frac = hueToRgb(p, q, h_frac - 1 / 3);
+    }
+
+    // Convert fractions to 8-bit RGB values
+    const r = Math.round(r_frac * 255);
+    const g = Math.round(g_frac * 255);
+    const b = Math.round(b_frac * 255);
+
+    return [r, g, b];
+}
+
+
+// TODO: move this soon
+// /**
+//  * Generates a random color in HSL format with the given saturation and lightness, and returns it in hexadecimal format.
+//  * 
+//  * @param s - The saturation value (0 to 100).
+//  * @param l - The lightness value (0 to 100).
+//  * @returns A random color in hexadecimal format (e.g., "#RRGGBB").
+//  */
+// function randHue(s: number, l: number): string {
+//     // Generate a random hue value (0 to 359 degrees)
+//     let h = randInt(0, 359);
+
+//     // Convert HSL to RGB
+//     let [r, g, b] = hslToRgb(h, s, l);
+
+//     // Convert RGB to hexadecimal format
+//     return rgbToHex(r, g, b);
+// }

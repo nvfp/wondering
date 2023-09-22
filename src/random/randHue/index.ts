@@ -9,7 +9,7 @@ import { hslToRgb, rgbToHex } from "../../color/index.js";
  * @param l - The lightness value (0 to 100).
  * @returns A random color in hexadecimal format (e.g., "#RRGGBB").
  */
-export function randHue(s: number, l: number): string {
+export default function randHue(s: number, l: number): string {
     // Generate a random hue value (0 to 359 degrees)
     let h = randInt(0, 359);
 

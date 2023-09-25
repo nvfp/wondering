@@ -1,4 +1,4 @@
-# wondering
+# wondering💙
 
 TypeScript utilities library.
 
@@ -10,4 +10,4 @@ npm install wondering
 
 ## License
 
-MIT
+This project and its documentation are licensed under the MIT License.

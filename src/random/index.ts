@@ -74,3 +74,22 @@ export function randn(min: number = -3.6, max: number = 3.6, skew: number = 1): 
     }
     return num;
 }
+
+
+/**
+ * Generates a random hexadecimal "hash" of the specified length.
+ *
+ * @param length The desired length of the hexadecimal hash.
+ * @returns A random hexadecimal hash (example: c05d14dba9).
+ */
+export function generateHexHash(length: number): string {
+    const chars = '0123456789abcdef';
+    let uid = '';
+
+    for (let i = 0; i < length; i++) {
+        const idx = Math.floor(Math.random() * chars.length);
+        uid += chars.charAt(idx);
+    }
+
+    return uid;
+}

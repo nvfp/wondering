@@ -17,9 +17,11 @@ export default class Genetic {
     private mutation2Range: [number, number];
     private numNew: number;
     
-    private population: Record<string, { nn: Dense; score: number }>;
+    // private population: Record<string, { nn: Dense; score: number }>;
+    public population: Record<string, { nn: Dense; score: number }>;
     
-    private gen: number;
+    // private gen: number;
+    public gen: number;
     private scoringFunc: (() => void) | null;
     private theParentIds: string[] | null;
     private prev: Record<string, { nn: Dense; score: number }>;
@@ -114,7 +116,7 @@ export default class Genetic {
         return average;
     }
 
-    private setScoringFunc(fn: () => void): void {
+    setScoringFunc(fn: () => void): void {
         this.scoringFunc = fn;
     }
 
@@ -174,8 +176,8 @@ export default class Genetic {
             this.prev = { ...this.population };
         }
     }
-    
-    private nextGen(): void {
+
+    nextGen(): void {
 
         this.gen += 1;
         this.scoring();
